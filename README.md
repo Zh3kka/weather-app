@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+**Тестовое задание**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Инициализация проекта
+для инициализации проекта нужно нужно ввести команду `npm i`
 
-## Available Scripts
+## Запуск проекта 
+Для запуска проекта запускаем команду `npm start`
 
-In the project directory, you can run:
+## Сборка проекта
+Для сборки проекта запускаем команду `npm run build`
 
-### `npm start`
+## Хостинг проекта
+Сделан деплой проекта на vercel. Ссылка -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Использовал библиотеку компонентов Material-UI. Для отображения данных использовал моковые данные, так как api openweather почему-то недоступно.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+*Использовал FSD архитектуру*
+# Слой `app`
+Слой является точкой входа в приложение. Присутсвуют компоненты App.tsx, index.css
+# Слой `entities`
+Слой включает бизнес-объекты приложения. Weather представляет объект погоды. Присутсвуют types/Weather.ts для определения типов и WeatherInfo/WeatherInfo.tsx для отображения информации о погоде
+# Слой `features`
+Слой включает функции приложения. Содержит функцию поиска городов. CitySearch управляет функцией поиска города и компонент components/CityInput.tsx для ввода и выбора городов
+# Слой `processes`
+Слой управляет и взаимодействует бизнес-процессом. History управляет историей поиска городов. Компонент components/History.tsx отображает историю поиска и позволяет повторно выбрать нужный город. 
+# Слой `shared`
+Слой содежит общие утилиты, которые используются в функциях и объектах. Mocks содержит моковые данные, использумые в приложении. mocks/weatherData.ts содержит моковые данные о погоде в различных городах
